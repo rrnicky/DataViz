@@ -1,0 +1,11 @@
+dash==3.0.0
+pandas
+plotly
+scikit-learn
+nltk
+gensim
+transformers
+torch
+openpyxl
+dash-mantine-components
+dash-bootstrap-components

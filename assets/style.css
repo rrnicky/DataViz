@@ -1,0 +1,62 @@
+#apply-button {
+    height: 40px !important;
+    width: 200px !important;
+    font-size: 16px !important;
+    background-color: #366D3F !important;
+    color: white !important;
+    border: none;
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+}
+
+#download-btn {
+    height: 40px !important;
+    width: 250px !important;
+    font-size: 16px !important;
+    background-color: #366D3F !important;
+    color: white !important;
+    border: none;
+    border-radius: 8px;
+}
+
+.graph-icon-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.graph-icon-tooltip .tooltip-text {
+  visibility: hidden;
+  width: 140px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -70px;
+  font-size: 12px;
+  font-weight: normal;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.graph-icon-tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.graph-icon-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
