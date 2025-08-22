@@ -1,6 +1,7 @@
 from dash import Dash, dcc, html, Input, Output, State, no_update
 import dash_mantine_components as dmc
 import dash_bootstrap_components as dbc
+import os
 
 import callbacks.homepage_callbacks
 import callbacks.preprocessing_callbacks
@@ -25,6 +26,7 @@ app.layout = dmc.MantineProvider(
 
 if __name__ == "__main__":
     try:
-        app.run(host="0.0.0.0", port=8080)
+        port = int(os.environ.get("PORT", 10000))
+        app.run(host="0.0.0.0", port=port)
     except Exception as e:
         print(f"App error: {e}")
