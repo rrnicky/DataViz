@@ -1,28 +1,19 @@
-FROM python:3.11-slim
+# Use full Python image (has build tools + libs already)
+FROM python:3.11
 
 # Set work directory
 WORKDIR /app
 
-# Install system dependencies (needed for pandas/scipy/sklearn sometimes)
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    gcc \
-    g++ \
-    libatlas-base-dev \
-    liblapack-dev \
-    gfortran \
-    && rm -rf /var/lib/apt/lists/*
-
-# Copy requirements
+# Copy requirements first (leverage Docker cache)
 COPY requirements.txt .
 
-# Install Python dependencies
+# Install Python dependencies (prebuilt wheels will be used)
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
+# Copy app code
 COPY . .
 
-# Expose port (Render requires 10000)
+# Expose Render-required port
 EXPOSE 10000
 
 # Start app
