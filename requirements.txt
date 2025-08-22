@@ -1,5 +1,5 @@
 --only-binary=:all:
-dash==3.0.0
+dash==3.2.0
 pandas==2.2.3
 plotly
 scikit-learn
